@@ -20,6 +20,7 @@
 }
 body {
   background-color: var(--almost-white);
+  position: relative;
 }
 h1 {
   font-size: 3.73rem;
@@ -63,6 +64,22 @@ button {
 button:hover {
   background-color: var(--space-blue);
 }
+#menu-open-button {
+  margin-left: auto;
+  width: 2rem;
+  height: 1.13rem;
+  z-index: 9999;
+  cursor: pointer;
+}
+#menu-close-button {
+  position: absolute;
+  top: 1.8rem;
+  right: 1.33rem;
+  width: 2rem;
+  height: 2rem;
+  z-index: 9999;
+  cursor: pointer;
+}
 
 /* Main content */
 nav,
@@ -70,20 +87,122 @@ main {
   padding-inline: 11rem;
 }
 nav {
-  margin-top: 5.93rem;
+  padding-top: 5.93rem;
   margin-bottom: 3.67rem;
-  /* Temp for setup purposes */
-  border: 1px solid hotpink;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+#nav-menu {
+  margin-left: auto;
+  list-style: none;
+  display: flex;
+  gap: 2.67rem;
+  color: var(--gun-metal);
+}
+#nav-menu a {
+  color: inherit;
+  text-decoration: none;
+}
+#nav-menu a:hover {
+  color: var(--salmon);
+}
+#main {
+  position: relative;
+  z-index: -1;
 }
 .primary-grid-container {
   counter-reset: cards;
+  position: relative;
+  z-index: -1;
 }
 .article-cards > h5::before {
   counter-increment: cards;
   content: "0" counter(cards) "\a";
   white-space: pre;
 }
+@media (max-width: 950px) {
+  nav,
+  main {
+    padding-inline: 17%;
+  }
+  #nav-menu {
+    gap: 2rem;
+  }
+}
+@media (max-width: 800px) {
+  nav,
+  main {
+    padding-inline: 13.5%;
+  }
+  #nav-menu {
+    gap: 1.5rem;
+  }
+}
+@media (max-width: 650px) {
+  nav,
+  main {
+    padding-inline: 10%;
+  }
+}
+@media (max-width: 600px) {
+  nav {
+    padding-top: 2.13rem;
+    margin-bottom: 2.13rem;
+  }
+  #logo {
+    max-width: 3rem;
+  }
+  #nav-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin-top: 0;
+    padding-top: 9.5rem;
+    flex-direction: column;
+    gap: 1.6rem;
+    z-index: 500;
+    background-color: var(--almost-white);
+    width: 68%;
+    width: 68vw;
+    height: 100%;
+    height: 100vh;
+    transform: translateX(100%);
+  }
+  #nav-menu a {
+    color: var(--space-blue);
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 500px) {
+  nav,
+  main {
+    padding-inline: 7%;
+  }
+}
+@media (max-width: 373px) {
+  nav,
+  main {
+    padding-inline: 4%;
+  }
+}
 
+#overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  width: 100%;
+  height: 100vh;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 70%);
+}
+.overflow-hidden {
+  overflow: hidden;
+}
 .hidden {
   display: none;
 }

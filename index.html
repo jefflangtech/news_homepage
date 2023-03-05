@@ -3,27 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="resources/images/favicon-edited-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="resources/images/new-favicon.png">
   <link rel="stylesheet" href="resources/css/reset.css">
   <link rel="stylesheet" href="resources/css/index.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
   </style>
-  <title>Frontend Mentor | News homepage</title>
+  <title>News Homepage</title>
 </head>
-<body>
+<body class="">
+  <div id="overlay" class="hidden"></div>
   <nav>
     <img id="logo" src="resources/images/logo.svg" alt="W company logo">
     <ul id="nav-menu">
-      <li class="nav-link">Home</li>
-      <li class="nav-link">New</li>
-      <li class="nav-link">Popular</li>
-      <li class="nav-link">Trending</li>
-      <li class="nav-link">Categories</li>
+      <li class="nav-link"><a href="#">Home</a></li>
+      <li class="nav-link"><a href="#">New</a></li>
+      <li class="nav-link"><a href="#">Popular</a></li>
+      <li class="nav-link"><a href="#">Trending</a></li>
+      <li class="nav-link"><a href="#">Categories</a></li>
     </ul>
+    <img id="menu-open-button" class="hidden" src="resources/images/icon-menu.svg" alt="" srcset="">
     <img id="menu-close-button" class="hidden" src="resources/images/icon-menu-close.svg" alt="" srcset="">
   </nav>
-  <main>
+  <main id="main">
     <section class="primary-grid-container">
       <article class="feature-grid-container">
         <img class="feature-image" src="resources/images/image-web-3-desktop.jpg" alt="">
