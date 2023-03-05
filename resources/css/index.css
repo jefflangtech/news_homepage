@@ -1,0 +1,89 @@
+/* Organization:
+ - Essential style & structures 
+ - Main content
+*/
+
+
+/* Essential styles & structure */
+:root {
+  /* Color system */
+  --almost-white: #fffdfa;
+  --space-blue: #00001a;
+  --gun-metal: #5e607a;
+  --salmon: #f15d51;
+  --silver: #c5c6ce;
+  --yellow: #e9aa52;
+  /* fonts */
+  font-size: 15px;
+  line-height: 26px;
+  font-family: 'Inter', sans-serif;
+}
+body {
+  background-color: var(--almost-white);
+}
+h1 {
+  font-size: 3.73rem;
+  line-height: 3.73rem;
+}
+h2 {
+  font-size: 2.67rem;
+  line-height: 2.67rem;;
+}
+h3 {
+  font-size: 2.13rem;
+  line-height: 2.13rem;;
+}
+h4 {
+  font-size: 1.33rem;
+  line-height: 1.6rem;
+}
+h5 {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+}
+h1,
+h4,
+h5 {
+  font-weight: 800;
+}
+h2,
+h3 {
+  font-weight: 700;
+}
+button {
+  color: var(--almost-white);
+  font-size: 0.93rem;
+  font-weight: 700;
+  letter-spacing: 0.3rem;
+  line-height: 1.6rem;
+  background-color: var(--salmon);
+  padding-block: 0.8rem;
+  padding-inline: 2.2rem;
+}
+button:hover {
+  background-color: var(--space-blue);
+}
+
+/* Main content */
+nav,
+main {
+  padding-inline: 11rem;
+}
+nav {
+  margin-top: 5.93rem;
+  margin-bottom: 3.67rem;
+  /* Temp for setup purposes */
+  border: 1px solid hotpink;
+}
+.primary-grid-container {
+  counter-reset: cards;
+}
+.article-cards > h5::before {
+  counter-increment: cards;
+  content: "0" counter(cards) "\a";
+  white-space: pre;
+}
+
+.hidden {
+  display: none;
+}
