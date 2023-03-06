@@ -79,8 +79,11 @@ button:hover {
   z-index: 9999;
   cursor: pointer;
 }
+.menu-open-button {
+  display: none;
+}
 #menu-close-button {
-  position: absolute;
+  position: fixed;
   top: 1.8rem;
   right: 1.33rem;
   width: 2rem;
@@ -117,7 +120,6 @@ nav {
 }
 #main {
   position: relative;
-  /* z-index: -1; */
   padding-bottom: 6rem;
 }
 .primary-grid-container {
@@ -126,8 +128,6 @@ nav {
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 2rem;
   row-gap: 4.73rem;
-  /* position: relative;
-  z-index: -1; */
 }
 .feature-grid-container {
   grid-column: 1 / span 2;
@@ -141,6 +141,9 @@ nav {
   grid-column: 1 / span 2;
   height: 100%;
   object-fit: cover;
+}
+#mobile-image {
+  display: none;
 }
 .article-abstract {
   margin-left: 0.5rem;
@@ -224,6 +227,9 @@ nav {
   .feature-grid-container > * {
     grid-column: 1 / span 2;
   }
+  .feature-grid-container > h1 {
+    margin-block: auto;
+  }
 }
 @media (max-width: 950px) {
   nav,
@@ -242,6 +248,12 @@ nav {
   #nav-menu {
     gap: 1.5rem;
   }
+  #desktop-image {
+    display: none;
+  }
+  #mobile-image {
+    display: block;
+  }
 }
 @media (max-width: 650px) {
   nav,
@@ -258,27 +270,38 @@ nav {
     max-width: 3rem;
   }
   #nav-menu {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
+    position: fixed;
+    inset: 0 0 0 32%;
     margin-top: 0;
-    padding-top: 9.5rem;
+    padding-top: min(20vh, 9.5rem);
     flex-direction: column;
     gap: 1.6rem;
     z-index: 500;
     background-color: var(--almost-white);
-    width: 68%;
-    width: 68vw;
     height: 100%;
     height: 100svh;
     height: 100vh;
     transform: translateX(100%);
+    transition: transform 0.4s ease-in-out;
+    opacity: 0;
+  }
+  #nav-menu[data-attribute="true"] {
+    transform: translateX(0%);
+    opacity: 1;
   }
   #nav-menu a {
     color: var(--space-blue);
     font-size: 1.2rem;
   }
+  .menu-open-button {
+    display: block;
+  }
+  /* #desktop-image {
+    display: none;
+  }
+  #mobile-image {
+    display: block;
+  } */
 }
 @media (max-width: 500px) {
   nav,
@@ -294,16 +317,14 @@ nav {
 }
 
 #overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  position: fixed;
+  inset: 0 0 0 0;
   width: 100vw;
   width: 100%;
   height: 100vh;
   height: 100%;
   background-color: rgba(0, 0, 0, 70%);
+  z-index: 200;
 }
 .overflow-hidden {
   overflow: hidden;
