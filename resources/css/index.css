@@ -137,10 +137,9 @@ nav {
   row-gap: 2rem;
   column-gap: 1rem;
 }
-.feature-image {
+.feature-image-container {
   grid-column: 1 / span 2;
-  grid-row: 1;
-  height: 100%;
+  /* grid-row: 1; */
   object-fit: cover;
   width: 100%;
 }
