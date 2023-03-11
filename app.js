@@ -3,7 +3,7 @@ const app = express()
 const path = require('path')
 const port = 3000
 
-app.use(express.static(path.join(__dirname, '/')))
+app.use(express.static(path.join(__dirname, 'static')))
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/index.html'))
