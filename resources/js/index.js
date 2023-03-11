@@ -18,6 +18,7 @@ const toggleNavMenu = function() {
   else {
     navMenu.setAttribute('data-attribute', 'false');
   }
+  return blah;
 }
 
 menuOpenButton.addEventListener('click', toggleNavMenu, false);
