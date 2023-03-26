@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Frontend Mentor Solution](https://your-solution-url.com)
+- Solution URL: [Frontend Mentor Solution](https://www.frontendmentor.io/solutions/news-webpage-implemented-with-css-gride-o5nWC7MW_O)
 - Live Site URL: [JeffLangTech Github Repo](https://jefflangtech.github.io/news_homepage/)
 
 ## My process
