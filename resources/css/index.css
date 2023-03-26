@@ -1,8 +1,8 @@
 /* Organization:
  - Essential style & structures 
  - Main content
+ - Media Queries
 */
-
 
 /* Essential styles & structure */
 :root {
@@ -139,7 +139,6 @@ nav {
 }
 .feature-image-container {
   grid-column: 1 / span 2;
-  /* grid-row: 1; */
   object-fit: cover;
   width: 100%;
 }
@@ -199,7 +198,7 @@ nav {
 .article-cards {
   flex-basis: 300px;
   min-width: 317px;
-  max-width: 350px;
+  max-width: 375px;
   flex-grow: 1;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -236,6 +235,7 @@ nav {
   padding-right: 0.5rem;
   line-height: 1.73rem;
 }
+/* Media Queries */
 @media (max-width: 1175px) {
   .feature-grid-container > * {
     grid-column: 1 / span 2;
@@ -266,6 +266,24 @@ nav {
   }
   #nav-menu {
     gap: 1.5rem;
+  }
+  .new-headlines-container {
+    padding-bottom: 1rem;
+  }
+}
+@media (max-width: 730px) {
+  .feature-grid-container {
+    grid-column: 1 / span 3;
+  }
+  .new-headlines-container {
+    grid-column: 1 / span 3;
+    grid-row: auto;
+  }
+  #desktop-image {
+    display: block;
+  }
+  #mobile-image {
+    display: none;
   }
 }
 @media (max-width: 650px) {
@@ -309,12 +327,12 @@ nav {
   .menu-open-button {
     display: block;
   }
-  /* #desktop-image {
+  #desktop-image {
     display: none;
   }
   #mobile-image {
     display: block;
-  } */
+  }
 }
 @media (max-width: 500px) {
   nav,
